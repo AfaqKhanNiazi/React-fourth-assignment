@@ -79,3 +79,16 @@ button:focus-visible {
 bdr {
   border: 2px solid red;
 }
+
+bdr2 {
+  border: 2px solid green;
+}
+
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* @apply flex justify-center uppercase items-center; */
+}
