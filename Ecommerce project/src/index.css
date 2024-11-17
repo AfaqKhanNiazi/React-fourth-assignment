@@ -2,6 +2,7 @@
 
 *{
   font-family: "popplins";
+  --primary:#db4444;
 }
 @tailwind base;
 @tailwind components;
@@ -86,6 +87,7 @@ bdr2 {
 
 
 .center{
+  /* color: var(--primary); */
   display: flex;
   justify-content: center;
   align-items: center;

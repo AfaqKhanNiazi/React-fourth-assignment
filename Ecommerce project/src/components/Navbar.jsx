@@ -1,6 +1,7 @@
 import logo from "../assets/logo/logo.svg"
 import { CiSearch } from "react-icons/ci";
 
+const links = ["Home","about","contact us"]
 
 export default function Navbar() {
   return (
@@ -11,6 +12,11 @@ export default function Navbar() {
         <CiSearch className="text-3xl"/>
 
     </div>
+    <ul className="flex gap-3">
+
+      {links.map((item)=> (<li className="hover:underline cursor-pointer">{item}</li>)
+    )}
+    </ul>
     </div>
   )
 }
