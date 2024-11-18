@@ -7,6 +7,7 @@ import { FaRegUser } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const links = [
   { title: "home", link: "/" },
@@ -16,7 +17,7 @@ const links = [
 
 export default function Navbar() {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
-  const isLoggedIn = true;
+  const isLoggedIn = false;
 
   const navLinkStyle =
     "capitalize hover:underline cursor-pointer hover:text-primary";
@@ -36,11 +37,13 @@ export default function Navbar() {
       <ul className="hidden md:flex gap-3">
         {links.map((item, i) => (
           <li className={navLinkStyle} key={i}>
-            <a href={item.link}>{item.title}</a>
+            <Link to={item.link}>{item.title}</Link>
           </li>
         ))}
 
-        {!isLoggedIn ? <li className={navLinkStyle}>Login</li> : null}
+        {!isLoggedIn ? <li className={navLinkStyle}>
+        <Link to="login">login</Link>
+          </li>:null}
       </ul>
 
       <button
@@ -54,13 +57,15 @@ export default function Navbar() {
         <ul className="absolute bg-gray-200 w-full z-10 gap-3 flex flex-col p-6 top-28">
           {links.map((item, i) => (
             <li className={navLinkStyle} key={i}>
-              <a href={item.link}>{item.title}</a>
+              <Link to={item.link}>{item.title}</Link>            
             </li>
           ))}
 
-          {!isLoggedIn ? <li className={navLinkStyle}>Login</li> : null}
-        </ul>
-      )}
+      {!isLoggedIn ? <li className={navLinkStyle}>
+        <Link to="login">login</Link>
+          </li>:null}
+      </ul>
+    )}
 
       <div className="icons center text-2xl gap-3">
         {isLoggedIn ? (
