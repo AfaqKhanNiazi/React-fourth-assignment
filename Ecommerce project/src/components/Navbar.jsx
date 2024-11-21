@@ -75,7 +75,7 @@ export default function Navbar() {
           </>
         ) : null}
 
-        <div className="bg-primary rounded-full overflow-hidden h-8 w-8 center text-base text-white">
+        <Link to={"/profile"} className="bg-primary rounded-full overflow-hidden h-8 w-8 center text-base text-white">
           {isLoggedIn ? (
             <img
               src="https://avatars.githubusercontent.com/u/182785779?s=96&v=4"
@@ -84,7 +84,7 @@ export default function Navbar() {
           ) : (
             <FaRegUser />
           )}
-        </div>
+        </Link>
       </div>
     </div>
   );

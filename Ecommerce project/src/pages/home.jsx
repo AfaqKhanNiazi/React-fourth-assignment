@@ -4,7 +4,7 @@ import ProductCard from "../components/ProductCard";
 
 export default function home() {
   return (
-    <div>home
+    <div>Home
     <ProductCard/>
     <ProductCard/>    
     <ProductCard/>
