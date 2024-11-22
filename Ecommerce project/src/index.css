@@ -4,6 +4,7 @@
   font-family: "popplins";
   --primary:#db4444;
 }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
