@@ -1,51 +1,51 @@
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-// import Swiper from 'swiper';
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-
-// const swiper = new Swiper(...);
-
-function Something ({index}) {
-    return <div className="w-40 h-96 bdr">{index}</div>
-}
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
+import ProductCard from "./ProductCard";
 
 export default function Slider() {
   return (
-    <div>Slider
-    <Swiper
-      spaceBetween={50}
-      slidesPerView={2}
-      modules={[Navigation,Pagination,Scrollbar]}
-      navigation
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-    >
-      <SwiperSlide>
-        {" "}
-        <Something index={1}/>{" "}  
+    <div>
+      <Swiper
+        spaceBetween={50}
+        slidesPerView={3}
+        modules={[Navigation, Pagination, Scrollbar, Autoplay, A11y]}
+        autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
+        pagination={{ clickable: true }}
+        navigation
+        scrollbar={{ draggable: true }}
+        onSlideChange={() => console.log("slide change")}
+        onSwiper={(swiper) => console.log(swiper)}
+      >
+        <SwiperSlide>
+          <ProductCard />
         </SwiperSlide>
         <SwiperSlide>
-        {" "}
-        <Something index={2}/>{" "}
+          <ProductCard />
         </SwiperSlide>
-      <SwiperSlide>{" "}
-        <Something index={3}/>{" "}
+        <SwiperSlide>
+          <ProductCard />
         </SwiperSlide>
-      <SwiperSlide>{" "}
-        <Something index={4}/>{" "}
+        <SwiperSlide>
+          <ProductCard />
         </SwiperSlide>
-      <SwiperSlide>{" "}
-        <Something index={5}/>{" "}
+        <SwiperSlide>
+          <ProductCard />
         </SwiperSlide>
-
-    </Swiper>
-
+        <SwiperSlide>
+          <ProductCard />
+        </SwiperSlide>
+      </Swiper>
     </div>
-  )
+  );
 }

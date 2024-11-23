@@ -4,7 +4,6 @@ import Home from "./pages/home"
 import About from "./pages/About"
 import Login from "./pages/login"
 import { Routes, Route, Outlet, Link, Navigate} from "react-router-dom";
-import Slider from "./components/Slider"
 
 // import { FcAbout } from "react-icons/fc";
 // import { DiVim } from "react-icons/di";
@@ -18,7 +17,7 @@ const isLoggedIn = true;
     <>
     <Banner/>
     <Navbar/>
-    <Slider/>
+
     
   <Routes>
   <Route path="/" index element={<Home />}/>

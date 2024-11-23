@@ -33,7 +33,7 @@ export default function Navbar() {
         />
         <CiSearch className="text-3xl" />
       </div>
-
+{/* destop nevbar */}
       <ul className="hidden md:flex gap-3">
         {links.map((item, i) => (
           <li className={navLinkStyle} key={i}>
@@ -54,15 +54,16 @@ export default function Navbar() {
       </button>
 
       {isHamburgerOpen && (
-        <ul className="absolute bg-gray-200 w-full z-10 gap-3 flex flex-col p-6 top-28">
+        // mobile navbar
+        <ul  className="absolute bg-gray-200 w-full z-10 gap-3 flex flex-col p-6 top-28">
           {links.map((item, i) => (
             <li className={navLinkStyle} key={i}>
-              <Link to={item.link}>{item.title}</Link>            
+        <Link onClick={()=>setIsHamburgerOpen(false)}to={item.link}>{item.title}</Link>            
             </li>
           ))}
 
       {!isLoggedIn ? <li className={navLinkStyle}>
-        <Link to="login">login</Link>
+        <Link onClick={()=>setIsHamburgerOpen(false)}to="login">login</Link>
           </li>:null}
       </ul>
     )}
