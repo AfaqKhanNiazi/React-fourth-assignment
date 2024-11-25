@@ -28,3 +28,7 @@ bdr2 {
 
   /* @apply flex justify-center uppercase items-center; */
 }
+
+.heading{
+  @apply font-semibold text-xl sm:text-4xl
+}

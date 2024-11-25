@@ -11,7 +11,7 @@ import { Routes, Route, Outlet, Link, Navigate} from "react-router-dom";
 
 
 function App() {
-const isLoggedIn = true;
+const isLoggedIn = false;
 
   return (
     <>
@@ -22,12 +22,16 @@ const isLoggedIn = true;
   <Routes>
   <Route path="/" index element={<Home />}/>
   <Route path="/about"element={<About/>}/>
+  <Route path="/not-found"element={<div>not founddd</div>}/>
+
    {isLoggedIn ? (
    <> 
   <Route path="/profile" element={<div>this is my profile page</div>}
   />
 
   <Route path="/login"element={<Navigate to="/" />}/>
+  <Route path="/*"element={<Navigate to="/not-found" />}/>
+
    </>
     ) : (
       <>
