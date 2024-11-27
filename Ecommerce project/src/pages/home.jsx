@@ -3,14 +3,12 @@ import Sectiontitle from "../components/Sectiontitle";
 import Slider from "../components/Slider";
 import ProductCard from "../components/ProductCard";
 import NewArrivalGrid from "../components/NewArrivalGrid";
-
-
+import { FaArrowUp } from "react-icons/fa";
 
 
 export default function home() {
   return (
-    <div>
-    
+    <div className="container-x">
     <Sectiontitle text="Today's"/>
     <h3 className="heading">Flash Sales</h3>
 
@@ -31,10 +29,10 @@ export default function home() {
     </div>
 <div className="flex gap-7">
   
-  <Products/>
-  <Products/> 
-  <Products/>
-  <Products/>
+  <ProductCard/>
+  <ProductCard/> 
+  <ProductCard/>
+  <ProductCard/>
 
 </div>
 
@@ -44,7 +42,9 @@ export default function home() {
     <h3 className="heading">New Arrival</h3>
 
     <NewArrivalGrid/>
-
+    <a href="#top" className="my-5 w-12 h-12 bg-gray-200 rounded-full bdr block center text-2xl ml-auto">
+    <FaArrowUp />
+    </a>
     </div>
   );
 }

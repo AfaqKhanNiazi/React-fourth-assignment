@@ -4,6 +4,7 @@ import Home from "./pages/home"
 import About from "./pages/About"
 import Login from "./pages/login"
 import { Routes, Route, Outlet, Link, Navigate} from "react-router-dom";
+import Footer from "./components/Footer"
 
 // import { FcAbout } from "react-icons/fc";
 // import { DiVim } from "react-icons/di";
@@ -40,7 +41,8 @@ const isLoggedIn = false;
  
   </>
     )}
-   </Routes>  
+   </Routes>
+   <Footer/>  
     </>
   )
 }

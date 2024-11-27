@@ -3,11 +3,18 @@
 *{
   font-family: "popplins";
   --primary:#db4444;
+  scroll-behavior: smooth;
 }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.container-x{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
 
 
 
@@ -30,5 +37,5 @@ bdr2 {
 }
 
 .heading{
-  @apply font-semibold text-xl sm:text-4xl
+  @apply font-semibold capitalize text-xl sm:text-4xl
 }
