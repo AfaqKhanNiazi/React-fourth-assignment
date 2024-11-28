@@ -13,7 +13,7 @@ import { VscSend } from "react-icons/vsc";
 export default function Footer() {
   return (
     <div className="bg-black text-white min-h-96 mt-8">
-      <div className="mx-[92px] flex-wrap gap-4 flex justify-between items-baseline text-start pt-[72px]">
+      <div className="container-x flex-wrap gap-4 flex justify-between items-baseline text-start pt-[72px]">
         <div className="flex flex-col gap-4">
           <h2 className="font-bold text-2xl ">Exclusive</h2>
           <p className="text-[20px] font-medium pt-1.5">Subscribe</p>
