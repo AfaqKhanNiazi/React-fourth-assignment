@@ -5,6 +5,7 @@ import About from "./pages/About"
 import Login from "./pages/login"
 import { Routes, Route, Outlet, Link, Navigate} from "react-router-dom";
 import Footer from "./components/Footer"
+import Products from "./pages/Products"
 
 // import { FcAbout } from "react-icons/fc";
 // import { DiVim } from "react-icons/di";
@@ -24,7 +25,10 @@ const isLoggedIn = false;
   <Route path="/" index element={<Home />}/>
   <Route path="/about"element={<About/>}/>
   <Route path="/not-found"element={<div>not founddd</div>}/>
+  <Route path="/products"element={<Products/>}/>
 
+
+  
    {isLoggedIn ? (
    <> 
   <Route path="/profile" element={<div>this is my profile page</div>}
