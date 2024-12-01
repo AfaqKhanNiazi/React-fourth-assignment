@@ -4,6 +4,8 @@ import Slider from "../components/Slider";
 import ProductCard from "../components/ProductCard";
 import NewArrivalGrid from "../components/NewArrivalGrid";
 import { FaArrowUp } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 
 
 export default function home() {
@@ -14,7 +16,7 @@ export default function home() {
 
     <Slider></Slider>
 
-    <Button className="h-14 w-56 mx-auto my-16"> View All Products </Button>
+    <Link to={'/products'} className="font-medium rounded-xl bg-primary center text-white h-14 w-56 mx-auto my-16"> View All Products </Link>
     
     <Sectiontitle text="Categories"/>
 
