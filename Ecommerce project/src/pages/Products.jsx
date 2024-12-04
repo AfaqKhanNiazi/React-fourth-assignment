@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
+// import Button from "../components/Button";
 
 export default function Products() {
   const API_KEY = "https://dummyjson.com/products";
@@ -18,54 +19,55 @@ export default function Products() {
     getProductData();
   }, []);
 
-  // console.log("products ", products);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const [searchTerm,setsearchTerm] = useState (" ")
+  const searchProducts = () => {
+    // const result = products?.filter((item) => {
+    //   return item.rating >= 4 && item.price > 50;
+    // });
 
-  console.log(searchTerm)
+    // const result = products?.sort((a,b)=>{
+    //   return b.price - a.price
+    // })
 
-  const searchProducts = ()=>{
-  const result =  products?.filter=((item)=>{
-    return item.price > 50;
+    const result = products?.filter((item) => {
+      return item.title.toLowerCase().includes(searchTerm);
     });
-    console.log("result",result);
-    return result  || []
-    
+
+    return result || [];
   };
-  const searchkaResult = searchProducts();
+
+  const searchKaResult = searchProducts();
 
   return (
     <div className="container-x">
-
-      <input 
-      type="search" 
-      name="price" id="price" 
-      onChange={(event)=>{
-
-      // console.log("value",event.target.value,);
-
-      setsearchTerm(event.target.value)
-      
-
-      }}
-      className="block w-full outline-none rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary my-8 sm:text-sm/6" 
-      placeholder="Search your product"
+      <input
+        type="search"
+        name="price"
+        id="price"
+        onChange={(event) => {
+          setSearchTerm(event.target.value?.toLowerCase());
+        }}
+        className="block w-full outline-none rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary my-8 sm:text-sm/6"
+        placeholder="Search your product"
       />
-
 
       {products === null ? "Loading...." : null}
 
       <div className="flex flex-wrap justify-center gap-4">
-        {searchkaResult?.map((item) => (
-          <ProductCard 
-          key={item.id} 
-          image={item.thumbnail} 
-          name={item.title}
-          price={item.price} 
-          discountPercentage={item.discountPercentage}
-          rating={item.rating}/>
+        {searchKaResult.length === 0 ? "product not found" : ""}
+
+        {searchKaResult?.map((item) => (
+          <ProductCard
+            key={item.id}
+            image={item.thumbnail}
+            name={item.title}
+            price={item.price}
+            discountPercentage={item.discountPercentage}
+            rating={item.rating}
+          />
         ))}
       </div>
-    </div> 
+    </div>
   );
 }
