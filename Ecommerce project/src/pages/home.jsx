@@ -14,7 +14,7 @@ export default function home() {
     <Sectiontitle text="Today's"/>
     <h3 className="heading">Flash Sales</h3>
 
-    <Slider></Slider>
+    <Slider/>
 
     <Link to={'/products'} className="font-medium rounded-xl bg-primary center text-white h-14 w-56 mx-auto my-16"> View All Products </Link>
     
@@ -31,7 +31,7 @@ export default function home() {
     </div>
 <div className="flex gap-7">
   
-  <ProductCard/>
+  <ProductCard price="5" discountPercentage={7} />
   <ProductCard/> 
   <ProductCard/>
   <ProductCard/>
