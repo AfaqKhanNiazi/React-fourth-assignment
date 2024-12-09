@@ -1,24 +1,9 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ProductCard from "../components/ProductCard";
-// import Button from "../components/Button";
+import useproducts from "../hooks/useproducts";
 
 export default function Products() {
-  const API_KEY = "https://dummyjson.com/products";
-
-  const [products, setProducts] = useState(null);
-
-  const getProductData = async () => {
-    const response = await axios(API_KEY);
-
-    setProducts(response?.data?.products);
-  };
-
-  // useEffect ak bar call hoga (in this case)
-  useEffect(() => {
-    getProductData();
-  }, []);
-
+  const{ products,isLoading, error } = useproducts();
   const [searchTerm, setSearchTerm] = useState("");
 
   const searchProducts = () => {
