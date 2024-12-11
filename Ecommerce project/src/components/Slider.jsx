@@ -37,6 +37,7 @@ export default function Slider() {
         {products?.slice(0,6)?.map((item)=>(
         <SwiperSlide key={item.id}>
           <ProductCard 
+          id={item.id}
           image={item.thumbnail}
           name={item.title}
           price={item.price}

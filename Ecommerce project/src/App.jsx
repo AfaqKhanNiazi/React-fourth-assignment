@@ -27,7 +27,7 @@ const isLoggedIn = false;
   <Route path="/about"element={<About/>}/>
   <Route path="/not-found"element={<div>not founddd</div>}/>
   <Route path="/products"element={<Products/>}/>
-  <Route path="/product/:id"element={<ProductDetail/>}/>
+  <Route path="/product/:id" element={<ProductDetail />} />
   
 
 

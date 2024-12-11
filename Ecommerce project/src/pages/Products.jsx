@@ -44,6 +44,7 @@ export default function Products() {
 
         {searchKaResult?.map((item) => (
           <ProductCard
+            id={item.id}
             key={item.id}
             image={item.thumbnail}
             name={item.title}

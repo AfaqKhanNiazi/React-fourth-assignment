@@ -8,7 +8,7 @@ export default function ProductCard(props){
     
     
     return(
-        <div className="group p-3 drop-shadow-md border-2 flex gap-4 flex-col relative bg-[F5F5F5] w-64 main-h-[350px]">
+        <a href={`/product/${props.id}`} className="group p-3 drop-shadow-md border-2 flex gap-4 flex-col relative bg-[F5F5F5] w-64 main-h-[350px]">
             <div className="discount absolute top-3 left-3 bg-primary w-14 h-6 rounded flex items-center text-xs justify-center text text-white">
                 -{Math.round(props.discountPercentage)}%
                 </div>
@@ -36,6 +36,6 @@ export default function ProductCard(props){
                 
             </div>
             </div>
-            </div>  
+            </a>  
     )
 }
