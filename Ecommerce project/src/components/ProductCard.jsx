@@ -19,7 +19,7 @@ export default function ProductCard(props){
             className="m-auto group-hover:scale-110 transition-all duration-300 " /> 
             </div>
             <div>
-            <h3 className="font-medium group-hover:text-primary transition-all duration-300">HAVIT HV-G92 Gamepad</h3>
+            <h3 className="font-medium group-hover:text-primary transition-all duration-300">{props.name}</h3>
             <p className="font-medium">
             <span className="text-primary">${discountPrice}</span>{" "}
             <span className="text-gray-400 line-through">${props.price}</span>

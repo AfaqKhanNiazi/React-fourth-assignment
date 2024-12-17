@@ -3,7 +3,7 @@ export default function login() {
 
   const formSubmitHua = (event)=>{
     event.preventDefault()
-    console.log("testing"new FormData(event.target);
+    // console.log("testing"new FormData(event.target);
     
   }
   return (
