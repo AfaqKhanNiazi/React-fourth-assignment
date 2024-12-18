@@ -6,7 +6,7 @@ import NewArrivalGrid from "../components/NewArrivalGrid";
 import { FaArrowUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import useproducts from "../hooks/useproducts";
-
+import { CgDarkMode } from "react-icons/cg";
 
 
 export default function home() {
@@ -15,7 +15,7 @@ export default function home() {
 
 
   return (
-    <div className="container-x">
+    <div className="container-x bg-slate-900">
     <Sectiontitle text="Today's"/>
     <h3 className="heading">Flash Sales</h3>
 
@@ -24,8 +24,9 @@ export default function home() {
     <Link to={'/products'} className="font-medium rounded-xl bg-primary center text-white h-14 w-56 mx-auto my-16"> View All Products </Link>
     
     <Sectiontitle text="Categories"/>
-
-    <h3 className="heading">Browse By Category</h3>
+{/* 
+    <h3 className={`heading ${darkMode ? "text-white" : ""}`}>
+      Browse By Category</h3> */}
     {/* todo */}
     <Sectiontitle text="This Month"/>
 
@@ -75,3 +76,6 @@ export default function home() {
     </div>
   );
 }
+
+
+
