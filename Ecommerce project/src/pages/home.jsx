@@ -6,32 +6,33 @@ import NewArrivalGrid from "../components/NewArrivalGrid";
 import { FaArrowUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import useproducts from "../hooks/useproducts";
-import { CgDarkMode } from "react-icons/cg";
+
 
 
 export default function home() {
-  
+  const darkMode = true; 
+
   const{ products, isLoading, error } = useproducts("limit=15&skip=35");
 
 
   return (
-    <div className="container-x bg-slate-900">
+    <div className={`container-x ${darkMode ?"bg-slate-900":""}`}>
     <Sectiontitle text="Today's"/>
-    <h3 className="heading">Flash Sales</h3>
+    <h3 className={`heading ${darkMode ? "text-white" : ""}`}>Flash Sales</h3>
 
     <Slider/>
 
     <Link to={'/products'} className="font-medium rounded-xl bg-primary center text-white h-14 w-56 mx-auto my-16"> View All Products </Link>
     
     <Sectiontitle text="Categories"/>
-{/* 
+ 
     <h3 className={`heading ${darkMode ? "text-white" : ""}`}>
-      Browse By Category</h3> */}
+      Browse By Category</h3>
     {/* todo */}
     <Sectiontitle text="This Month"/>
 
     <div className="flex justify-between mb-16">
-    <h3 className="heading">Best Selling Products</h3>
+    <h3 className={`heading ${darkMode ? "text-white" : ""}`}>Best Selling Products</h3>
     <Button className="h-14 w-40">View All</Button>
 
     </div>
@@ -67,7 +68,7 @@ export default function home() {
         </div>
     <Sectiontitle text="Featured"/>
 
-    <h3 className="heading">New Arrival</h3>
+    <h3 className={`heading ${darkMode ? "text-white" : ""}`}>New Arrival</h3>
 
     <NewArrivalGrid/>
     <a href="#top" className="my-5 w-12 h-12 bg-gray-200 rounded-full bdr block center text-2xl ml-auto">

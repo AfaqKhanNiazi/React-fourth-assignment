@@ -1,3 +1,5 @@
+import { BsFillMoonFill } from "react-icons/bs";
+import { AiOutlineSun } from "react-icons/ai";
 import logo from "../assets/logo/logo.svg";
 import logoMobile from "../assets/logo/logo-mobile.svg";
 import { CiSearch } from "react-icons/ci";
@@ -16,17 +18,20 @@ const links = [
 ];
 
 export default function Navbar() {
-const darkMode = false; 
 
-
+  const[darkMode,setdarkmode]=useState(false);
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const isLoggedIn = false;
 
   const navLinkStyle =
     "capitalize hover:underline cursor-pointer hover:text-primary";
+
+    console.log("uper wala darkmode",darkMode);
+    
+
   return (
     <div id="top" className={`container-x ${ darkMode ? "bg-slate-900" : ""
-    } h-28 relative flex justify-between items-center`}
+    } h-28 transition-colors duration-300 relative flex justify-between items-center`}
     >
       <img src={logoMobile} alt="" width={60} height={60} />
 
@@ -39,7 +44,7 @@ const darkMode = false;
         <CiSearch className="text-3xl" />
       </div>
 {/* destop nevbar */}
-      <ul className="hidden md:flex gap-3">
+      <ul className={`hidden md:flex gap-3 ${darkMode?"text-white":""}`}>
         {links.map((item, i) => (
           <li className={navLinkStyle} key={i}>
             <Link to={item.link}>{item.title}</Link>
@@ -74,6 +79,14 @@ const darkMode = false;
     )}
 
       <div className="icons center text-2xl gap-3">
+      
+      
+<button onClick={()=>{
+  setdarkmode(!darkMode);
+}} className={`${darkMode ? "text-white" : ""} transition duration-300`}>
+  {darkMode ? <AiOutlineSun /> : <BsFillMoonFill />}
+  </button>
+
         {isLoggedIn ? (
           <>
             <IoMdHeart className="" />
