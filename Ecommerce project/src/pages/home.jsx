@@ -6,17 +6,19 @@ import NewArrivalGrid from "../components/NewArrivalGrid";
 import { FaArrowUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import useproducts from "../hooks/useproducts";
+import Hero  from "../components/hero";
 
 
-
-export default function home() {
-  const darkMode = true; 
+export default function home({darkMode}) {
+  
 
   const{ products, isLoading, error } = useproducts("limit=15&skip=35");
 
 
   return (
-    <div className={`container-x ${darkMode ?"bg-slate-900":""}`}>
+    <>
+    <Hero/>
+    <div className={`container-x transition-colors duration-300 ${darkMode ?"bg-slate-900":""}`}>
     <Sectiontitle text="Today's"/>
     <h3 className={`heading ${darkMode ? "text-white" : ""}`}>Flash Sales</h3>
 
@@ -75,8 +77,6 @@ export default function home() {
     <FaArrowUp />
     </a>
     </div>
+    </>
   );
 }
-
-
-

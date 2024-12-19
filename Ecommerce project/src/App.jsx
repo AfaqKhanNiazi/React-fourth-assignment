@@ -7,6 +7,7 @@ import { Routes, Route, Outlet, Link, Navigate} from "react-router-dom";
 import Footer from "./components/Footer"
 import Products from "./pages/Products"
 import ProductDetail from "./pages/ProductDetail"
+import { useState } from "react"
 
 // import { FcAbout } from "react-icons/fc";
 // import { DiVim } from "react-icons/di";
@@ -16,15 +17,18 @@ import ProductDetail from "./pages/ProductDetail"
 function App() {
 const isLoggedIn = false;
 
+const[darkMode,setdarkmode]=useState(false);
+
+
   return (
     <>
     <Banner/>
-    <Navbar/>
+    <Navbar darkMode={darkMode} setdarkmode={setdarkmode}/>
 
     
   <Routes>
-  <Route path="/" index element={<Home />}/>
-  <Route path="/about"element={<About/>}/>
+  <Route path="/" index element={<Home darkMode={darkMode} />}/>
+  <Route path="/about"element={<About darkMode={darkMode} />}/>
   <Route path="/not-found"element={<div>not founddd</div>}/>
   <Route path="/products"element={<Products/>}/>
   <Route path="/product/:id" element={<ProductDetail />} />

@@ -17,9 +17,8 @@ const links = [
   { title: "contact us", link: "/contact" },
 ];
 
-export default function Navbar() {
+export default function Navbar({darkMode,setdarkmode}) {
 
-  const[darkMode,setdarkmode]=useState(false);
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const isLoggedIn = false;
 
@@ -31,7 +30,7 @@ export default function Navbar() {
 
   return (
     <div id="top" className={`container-x ${ darkMode ? "bg-slate-900" : ""
-    } h-28 transition-colors duration-300 relative flex justify-between items-center`}
+    } h-28 transition-colors duration-300 relative flex justify-between border-b border-b-gray-300 items-center`}
     >
       <img src={logoMobile} alt="" width={60} height={60} />
 
