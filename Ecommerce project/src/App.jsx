@@ -30,7 +30,7 @@ const[darkMode,setdarkmode]=useState(false);
   <Route path="/" index element={<Home darkMode={darkMode} />}/>
   <Route path="/about"element={<About darkMode={darkMode} />}/>
   <Route path="/not-found"element={<div>not founddd</div>}/>
-  <Route path="/products"element={<Products/>}/>
+  <Route path="/products"element={<Products darkMode={darkMode}/>}/>
   <Route path="/product/:id" element={<ProductDetail />} />
   
 

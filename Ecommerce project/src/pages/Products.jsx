@@ -2,7 +2,7 @@ import { useState } from "react";
 import ProductCard from "../components/ProductCard";
 import useproducts from "../hooks/useproducts";
 
-export default function Products() {
+export default function Products({darkMode}) {
   const{ products,isLoading, error } = useproducts();
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -25,7 +25,7 @@ export default function Products() {
   const searchKaResult = searchProducts();
 
   return (
-    <div className="container-x">
+    <div className={`container-x transition-colors duration-300 ${darkMode ?"bg-slate-900":""}`}>
       <input
         type="search"
         name="price"
@@ -44,6 +44,7 @@ export default function Products() {
 
         {searchKaResult?.map((item) => (
           <ProductCard
+            darkMode={darkMode}
             id={item.id}
             key={item.id}
             image={item.thumbnail}

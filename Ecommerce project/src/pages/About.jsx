@@ -2,7 +2,8 @@
 
 export default function About(props) {
   return (
-    <div className={`h-screen${props.darkmode?"bg-slate-900":""}`}>About</div>
+    <div className={`h-screen${props.darkmode?"bg-slate-900" : ""}`}>
+      About</div>
   )
 }
 

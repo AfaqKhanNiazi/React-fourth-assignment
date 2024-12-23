@@ -2,11 +2,10 @@ import Button from "../components/Button";
 import Sectiontitle from "../components/Sectiontitle";
 import Slider from "../components/Slider";
 import ProductCard from "../components/ProductCard";
-import NewArrivalGrid from "../components/NewArrivalGrid";
 import { FaArrowUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import useproducts from "../hooks/useproducts";
-import Hero  from "../components/hero";
+// import Hero  from "../components/hero";
 
 
 export default function home({darkMode}) {
@@ -16,8 +15,8 @@ export default function home({darkMode}) {
 
 
   return (
-    <>
-    <Hero/>
+    // <>
+    // <Hero/>
     <div className={`container-x transition-colors duration-300 ${darkMode ?"bg-slate-900":""}`}>
     <Sectiontitle text="Today's"/>
     <h3 className={`heading ${darkMode ? "text-white" : ""}`}>Flash Sales</h3>
@@ -72,11 +71,11 @@ export default function home({darkMode}) {
 
     <h3 className={`heading ${darkMode ? "text-white" : ""}`}>New Arrival</h3>
 
-    <NewArrivalGrid/>
+    {/* <NewArrivalGrid/> */}
     <a href="#top" className="my-5 w-12 h-12 bg-gray-200 rounded-full bdr block center text-2xl ml-auto">
     <FaArrowUp />
     </a>
     </div>
-    </>
+//  </>
   );
 }
