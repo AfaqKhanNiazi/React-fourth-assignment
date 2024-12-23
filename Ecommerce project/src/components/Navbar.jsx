@@ -10,6 +10,8 @@ import { IoMenu } from "react-icons/io5";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleDarkMode } from "../store/darkModeSlice";
 
 const links = [
   { title: "home", link: "/" },
@@ -17,10 +19,15 @@ const links = [
   { title: "contact us", link: "/contact" },
 ];
 
-export default function Navbar({darkMode,setdarkmode}) {
+export default function Navbar() {
+
+  const dispatch = useDispatch();
+  const darkMode = useSelector((state) => state.darkMode.darkMode);
+
+
 
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
-  const isLoggedIn = false;
+  const isLoggedIn = true;
 
   const navLinkStyle =
     "capitalize hover:underline cursor-pointer hover:text-primary";
@@ -77,12 +84,14 @@ export default function Navbar({darkMode,setdarkmode}) {
       </ul>
     )}
 
-      <div className="icons center text-2xl gap-3">
+      <div className={`${darkMode ? "text-white" : ""} icons center text-2xl gap-3`}>
       
       
-<button onClick={()=>{
-  setdarkmode(!darkMode);
-}} className={`${darkMode ? "text-white" : ""} transition duration-300`}>
+<button 
+onClick={()=>{
+   dispatch(toggleDarkMode())
+}} 
+>
   {darkMode ? <AiOutlineSun /> : <BsFillMoonFill />}
   </button>
 

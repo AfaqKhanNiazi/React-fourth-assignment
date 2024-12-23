@@ -1,8 +1,11 @@
 import { useState } from "react";
 import ProductCard from "../components/ProductCard";
 import useproducts from "../hooks/useproducts";
+import { useSelector } from "react-redux";
 
-export default function Products({darkMode}) {
+export default function Products() {
+  const darkMode = useSelector((state) => state.darkMode.darkMode);
+
   const{ products,isLoading, error } = useproducts();
   const [searchTerm, setSearchTerm] = useState("");
 

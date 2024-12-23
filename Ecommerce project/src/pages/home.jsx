@@ -5,11 +5,13 @@ import ProductCard from "../components/ProductCard";
 import { FaArrowUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import useproducts from "../hooks/useproducts";
+import { useSelector } from "react-redux";
 // import Hero  from "../components/hero";
 
 
-export default function home({darkMode}) {
+export default function home() {
   
+  const darkMode = useSelector((state) => state.darkMode.darkMode);
 
   const{ products, isLoading, error } = useproducts("limit=15&skip=35");
 

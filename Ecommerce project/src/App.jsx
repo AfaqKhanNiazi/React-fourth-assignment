@@ -17,20 +17,18 @@ import { useState } from "react"
 function App() {
 const isLoggedIn = false;
 
-const[darkMode,setdarkmode]=useState(false);
-
 
   return (
     <>
     <Banner/>
-    <Navbar darkMode={darkMode} setdarkmode={setdarkmode}/>
+    <Navbar/>
 
     
   <Routes>
-  <Route path="/" index element={<Home darkMode={darkMode} />}/>
-  <Route path="/about"element={<About darkMode={darkMode} />}/>
+  <Route path="/" index element={<Home/>}/>
+  <Route path="/about"element={<About/>}/>
   <Route path="/not-found"element={<div>not founddd</div>}/>
-  <Route path="/products"element={<Products darkMode={darkMode}/>}/>
+  <Route path="/products"element={<Products/>}/>
   <Route path="/product/:id" element={<ProductDetail />} />
   
 
