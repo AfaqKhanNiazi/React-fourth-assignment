@@ -27,7 +27,7 @@ export default function Navbar() {
 
 
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
-  const isLoggedIn = true;
+  const isLoggedIn = false;
 
   const navLinkStyle =
     "capitalize hover:underline cursor-pointer hover:text-primary";

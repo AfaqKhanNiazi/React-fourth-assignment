@@ -6,7 +6,7 @@ import { FaArrowUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import useproducts from "../hooks/useproducts";
 import { useSelector } from "react-redux";
-// import Hero  from "../components/hero";
+import Hero  from "../components/hero";
 
 
 export default function home() {
@@ -17,8 +17,8 @@ export default function home() {
 
 
   return (
-    // <>
-    // <Hero/>
+    <>
+     <Hero/>
     <div className={`container-x transition-colors duration-300 ${darkMode ?"bg-slate-900":""}`}>
     <Sectiontitle text="Today's"/>
     <h3 className={`heading ${darkMode ? "text-white" : ""}`}>Flash Sales</h3>
@@ -78,6 +78,6 @@ export default function home() {
     <FaArrowUp />
     </a>
     </div>
-//  </>
+ </>
   );
 }
