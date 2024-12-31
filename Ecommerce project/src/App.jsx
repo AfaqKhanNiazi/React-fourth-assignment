@@ -9,6 +9,7 @@ import Footer from "./components/Footer"
 import Products from "./pages/Products"
 import ProductDetail from "./pages/ProductDetail"
 import AddProduct from "./pages/AddProduct"
+import Search from "./pages/Search"
 // import Signup from "./pages/signup"
 
 // import { FcAbout } from "react-icons/fc";
@@ -20,6 +21,7 @@ const isLoggedIn = false;
 
 
   return (
+    
     <>
     <Banner/>
     <Navbar/>
@@ -34,6 +36,7 @@ const isLoggedIn = false;
   <Route path="/products"element={<Products/>}/>
   <Route path="/product/:id" element={<ProductDetail />} />
   <Route path="/product/add" element={<AddProduct/>} />
+  <Route path="/search" element={<Search/>} />
   
 
   

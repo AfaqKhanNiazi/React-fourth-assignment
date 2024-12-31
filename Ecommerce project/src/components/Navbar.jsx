@@ -12,6 +12,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleDarkMode } from "../store/darkModeSlice";
+import { useNavigate } from "react-router";
 
 const links = [
   { title: "home", link: "/" },
@@ -21,34 +22,48 @@ const links = [
 
 export default function Navbar() {
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const darkMode = useSelector((state) => state.darkMode.darkMode);
 
 
 
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
-  const isLoggedIn = false;
+  const isLoggedIn = true;
 
   const navLinkStyle =
     "capitalize hover:underline cursor-pointer hover:text-primary";
 
     console.log("uper wala darkmode",darkMode);
+
+    const handleSearch = (e)=>{
+      e.preventDefault()
+
+      console.log('value',e.target.children[0]);
+      
+      navigate('search')
+
+    }
     
 
   return (
     <div id="top" className={`container-x ${ darkMode ? "bg-slate-900" : ""
     } h-28 transition-colors duration-300 relative flex justify-between border-b border-b-gray-300 items-center`}
     >
+      <Link to="/">
       <img src={logoMobile} alt="" width={60} height={60} />
+      </Link>
 
-      <div className="w-60 px-2 h-10 rounded center bg-[#F5F5F5]">
+      <form onSubmit={handleSearch} className="w-60 px-2 h-10 rounded center bg-[#F5F5F5]">
         <input
           type="search"
           className="outline-none w-full text-sm bg-transparent"
           placeholder="What are you looking for?"
         />
+        <button>
         <CiSearch className="text-3xl" />
-      </div>
+        </button>
+      </form>
 {/* destop nevbar */}
       <ul className={`hidden md:flex gap-3 ${darkMode?"text-white":""}`}>
         {links.map((item, i) => (
