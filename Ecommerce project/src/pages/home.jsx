@@ -35,7 +35,8 @@ export default function home() {
     <Sectiontitle text="This Month"/>
 
     <div className="flex justify-between mb-16">
-    <h3 className={`heading ${darkMode ? "text-white" : ""}`}>Best Selling Products</h3>
+    <h3 className={`heading ${darkMode ? "text-white" : ""}`}>
+      Best Selling Products</h3>
     <Button className="h-14 w-40">View All</Button>
 
     </div>

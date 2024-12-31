@@ -34,16 +34,16 @@ export default function Navbar() {
   const navLinkStyle =
     "capitalize hover:underline cursor-pointer hover:text-primary";
 
-    console.log("uper wala darkmode",darkMode);
-
     const handleSearch = (e)=>{
       e.preventDefault()
 
-      console.log('value',e.target.children[0]);
-      
-      navigate('search')
+      const searchTerm = e?.target?.children?.[0]?.value;      
 
-    }
+      if(!searchTerm) return;
+      
+      navigate(`search?query=${searchTerm}`);
+
+    };
     
 
   return (
