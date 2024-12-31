@@ -1,8 +1,8 @@
-// import ProductCard from "./productcard";
-// import coat_img from "../assets/images/card_images/coat.png";
-// import bag_img from "../assets/images/card_images/bag.png";
-// import cpu_img from "../assets/images/card_images/cpu.png";
-// import bookself_img from "../assets/images/card_images/bookself.png";
+// // // import ProductCard from "./productCard";
+// // import coat_img from "../assets/images/card_images/coat.png";
+// // import bag_img from "../assets/images/card_images/bag.png";
+// // import cpu_img from "../assets/images/card_images/cpu.png";
+// // import bookself_img from "../assets/images/card_images/bookself.png";
 
 // export default function SellingProduct() {
 //   return (

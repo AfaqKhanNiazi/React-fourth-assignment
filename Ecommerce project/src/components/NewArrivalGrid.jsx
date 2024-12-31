@@ -1,7 +1,7 @@
-// import img1 from "../assets/images/ps5.png";
-// import img2 from "../assets/images/baji.png";
-// import img3 from "../assets/images/speaker.png";
-// import img4 from "../assets/images/perfume.png";
+// // import img1 from "../assets/images/ps5.png";
+// // import img2 from "../assets/images/baji.png";
+// // import img3 from "../assets/images/speaker.png";
+// // import img4 from "../assets/images/perfume.png";
 
 // export default function NewArrivalGrid() {
 //   return (
