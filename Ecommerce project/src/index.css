@@ -57,3 +57,29 @@ bdr2 {
 .heading{
   @apply font-semibold capitalize text-xl sm:text-4xl
 }
+
+
+
+
+ /* {contact} */
+ .contact_input_mobile{
+  outline: none;
+  border-bottom: 1px solid black;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+ @media(min-width:640px){
+   .sm\:contact_input{
+     outline: none;
+     border-bottom: 1px solid black;
+     width: 50%;
+     padding-bottom: 1rem;
+   }
+ }
+.contact_input{
+  width: 100%;
+}
+.contact_input::placeholder{
+  color: rgb(61, 60, 60);
+  font-size: 15px;
+}

@@ -1,6 +1,6 @@
 import Banner from "./components/banner"
 import Navbar from "./components/Navbar"
-// import Contact from "./pages/Contact";
+import Contact from "./pages/Contact";
 import Home from "./pages/home"
 import About from "./pages/About"
 import Login from "./pages/login"
@@ -30,7 +30,7 @@ const isLoggedIn = false;
   <Routes>
   <Route path="/" index element={<Home/>}/>
   <Route path="/about"element={<About/>}/>
-  {/* <Route path="/contact"element={<Contact/>}/> */}
+  <Route path="/contact"element={<Contact/>}/>
   {/* <Route path="/signup"element={<Signup/>}/> */}
   <Route path="/not-found"element={<div>not founddd</div>}/>
   <Route path="/products"element={<Products/>}/>

@@ -98,6 +98,7 @@ import { Link } from "react-router-dom";
 import useProducts from "../hooks/useProducts";
 import { useSelector } from "react-redux";
 import Hero  from "../components/hero";
+// import Timer from "../components/Timer";
 // import BrowserCategories from "../components/BrowserCategories";
 
 
@@ -109,6 +110,8 @@ export default function Home() {
   return (
     <>
       <Hero/>
+      {/* <Timer /> */}
+
     <div
       className={`container-x transition-colors duration-300 ${
         darkMode ? "bg-slate-900" : ""

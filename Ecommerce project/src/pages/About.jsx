@@ -12,7 +12,7 @@
 
 
 import { useSelector } from "react-redux";
-// import first_img from "../assets/images/first_img.jpg";
+// import first_img from "../assets/images/About/first_img.jpg"
 // import second_img from "../assets/images/second_img.jpg";
 // import logo_mobile from "../assets/images/About/logo_mobile.svg";
 
