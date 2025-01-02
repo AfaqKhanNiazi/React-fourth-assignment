@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cd build && copy index.html 200.html",
     "deploy": "surge ./dist --domain ecommerceproject.surge.sh",
     "lint": "eslint .",
     "preview": "vite preview"
